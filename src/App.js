@@ -120,7 +120,7 @@ function App() {
 
   const filteredItems =
     !filterType || filterType === "all"
-      ? items.filter((item) => compareLabel(searchRequest, item.label))
+      ? items.filter((item) => item.label.startsWith(searchRequest))
       : filterType === "active"
       ? items.filter((item) => !item.done && item.label.startsWith(searchRequest))
       : items.filter((item) => item.done && item.label.startsWith(searchRequest));
