@@ -105,15 +105,6 @@ function App() {
 
   const amountLeft = items.length - amountDone;
 
-  const compareLabel = (searchWord, label) => {
-    for (let i = 0; i < searchWord.length; i++) {
-      if (searchWord[i]!==label[i]) {
-        return false;
-      }
-    }
-    return true;
-  }
-
   const handleDeleteItem = ({key}) => {
     let target = items.findIndex((item) => item.key === key);
     setItems((prevItems) =>  {
